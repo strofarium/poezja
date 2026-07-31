@@ -23,6 +23,10 @@
     --sapphire:#2e5090;
     --emerald:#2f6d5b;
     --ink-text:#2a2318;
+    --r-sm:6px;
+    --r-md:9px;
+    --r-lg:12px;
+    --ease:cubic-bezier(.25,.7,.4,1);
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -50,8 +54,8 @@
   .crumbs{display:flex;align-items:center;gap:8px}
   .crumbs button{
     background:none;border:1px solid rgba(243,234,214,.25);color:var(--parchment);
-    padding:6px 14px;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.05em;transition:border-color .2s, background .2s;
+    padding:6px 14px;border-radius:var(--r-sm);font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:.05em;transition:border-color .25s var(--ease), background .25s var(--ease);
   }
   .crumbs button:hover{border-color:var(--gold-soft);background:rgba(201,162,39,.1)}
   .crumbs button:disabled{opacity:.25;pointer-events:none}
@@ -59,7 +63,7 @@
     display:flex;align-items:center;justify-content:center;
     width:42px;height:42px;padding:0;flex-shrink:0;
   }
-  .crumbs button.btn-back svg{width:24px;height:24px;color:var(--parchment);transition:color .2s}
+  .crumbs button.btn-back svg{width:24px;height:24px;color:var(--parchment);transition:color .25s var(--ease)}
   .crumbs button.btn-back:hover svg{color:var(--gold-soft)}
   .crumbs button.btn-back:hover{background:rgba(201,162,39,.14)}
 
@@ -71,7 +75,7 @@
   .medallion{
     position:relative;flex-shrink:0;margin:0 auto;
     width:min(560px,86vw);height:min(560px,86vw);
-    transition:width .5s ease, height .5s ease;
+    transition:width .5s var(--ease), height .5s var(--ease);
   }
   .stage.mode-detail .medallion{
     width:300px;height:300px;margin:0;
@@ -146,10 +150,10 @@
   .tt-mapa{
     background:rgba(15,15,24,.85)!important;border:1px solid var(--gold)!important;color:var(--parchment)!important;
     font-family:'JetBrains Mono',monospace!important;font-size:10px!important;letter-spacing:.04em!important;
-    text-transform:uppercase!important;border-radius:2px!important;box-shadow:none!important;
+    text-transform:uppercase!important;border-radius:var(--r-sm)!important;box-shadow:none!important;
   }
   .tt-mapa::before{display:none!important}
-  .leaflet-popup-content-wrapper{background:var(--parchment);color:var(--ink-text);border-radius:2px;font-family:'Literata',serif}
+  .leaflet-popup-content-wrapper{background:var(--parchment);color:var(--ink-text);border-radius:var(--r-sm);font-family:'Literata',serif}
   .leaflet-popup-tip{background:var(--parchment)}
   .leaflet-popup-content b{font-family:'Fraunces',serif;color:var(--ruby);font-size:15px}
   .leaflet-popup-content a{color:var(--sapphire)}
@@ -171,7 +175,7 @@
   .tab-btn{
     background:none;border:none;color:var(--parchment-dim);
     padding:10px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
-    border-bottom:2px solid transparent;transition:color .2s, border-color .2s;
+    border-bottom:2px solid transparent;transition:color .25s var(--ease), border-color .25s var(--ease);
   }
   .tab-btn.active{color:var(--gold-soft);border-bottom-color:var(--gold)}
   .tab-btn:hover{color:var(--parchment)}
@@ -183,12 +187,12 @@
   .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
   .tile{
     background:rgba(243,234,214,.04);border:1px solid rgba(243,234,214,.14);
-    border-radius:3px;padding:16px;text-align:left;color:var(--parchment);
-    display:flex;flex-direction:column;gap:10px;transition:border-color .2s, transform .2s, background .2s;
+    border-radius:var(--r-sm);padding:16px;text-align:left;color:var(--parchment);
+    display:flex;flex-direction:column;gap:10px;transition:border-color .25s var(--ease), transform .25s var(--ease), background .25s var(--ease);
   }
   .tile:hover{border-color:var(--gold);background:rgba(201,162,39,.07);transform:translateY(-2px)}
   .tile .thumb{
-    width:100%;height:120px;border-radius:2px;
+    width:100%;height:120px;border-radius:var(--r-sm);
     background:linear-gradient(135deg,var(--sapphire),var(--emerald));position:relative;overflow:hidden;
   }
   .tile .thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(201,162,39,.3) 50%,transparent 60%)}
@@ -202,12 +206,12 @@
   .tomiki-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;margin-bottom:6px}
   .tomik-karta{
     background:rgba(243,234,214,.04);border:1px solid rgba(243,234,214,.14);
-    border-radius:3px;padding:14px;text-align:left;color:var(--parchment);
-    display:flex;flex-direction:column;gap:10px;transition:border-color .2s, transform .2s, background .2s;
+    border-radius:var(--r-sm);padding:14px;text-align:left;color:var(--parchment);
+    display:flex;flex-direction:column;gap:10px;transition:border-color .25s var(--ease), transform .25s var(--ease), background .25s var(--ease);
   }
   .tomik-karta:hover{border-color:var(--gold);background:rgba(201,162,39,.07);transform:translateY(-2px)}
   .tomik-okladka{
-    width:100%;aspect-ratio:3/4;border-radius:2px;position:relative;overflow:hidden;
+    width:100%;aspect-ratio:3/4;border-radius:var(--r-sm);position:relative;overflow:hidden;
     background:linear-gradient(150deg,var(--ink),#2a2440);
     border:1px solid rgba(201,162,39,.3);
     display:flex;align-items:center;justify-content:center;
@@ -225,7 +229,7 @@
     display:flex;justify-content:space-between;align-items:center;gap:12px;
     padding:16px 4px;border-bottom:1px solid rgba(243,234,214,.14);
     background:none;border-left:none;border-right:none;border-top:none;color:var(--parchment);
-    text-align:left;width:100%;transition:padding-left .2s, background .2s;
+    text-align:left;width:100%;transition:padding-left .25s var(--ease), background .25s var(--ease);
   }
   .work-row:hover{padding-left:12px;background:rgba(201,162,39,.06)}
   .work-row .wt{font-family:'Fraunces',serif;font-size:17px}
@@ -241,8 +245,8 @@
   .btn.playing{background:var(--gold);color:var(--ink-deep)}
   .btn{
     border:1px solid var(--gold);color:var(--gold-soft);background:none;
-    padding:11px 20px;border-radius:2px;font-family:'JetBrains Mono',monospace;
-    font-size:12px;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,color .2s;
+    padding:11px 20px;border-radius:var(--r-sm);font-family:'JetBrains Mono',monospace;
+    font-size:12px;letter-spacing:.06em;text-transform:uppercase;transition:background .25s var(--ease),color .25s var(--ease);
   }
   .btn:hover{background:var(--gold);color:var(--ink-deep)}
   .btn.ghost{border-color:rgba(243,234,214,.3);color:var(--parchment-dim)}
@@ -276,7 +280,7 @@
     background:
       radial-gradient(ellipse at 50% 42%, rgba(201,162,39,.22) 0%, rgba(201,162,39,.06) 32%, transparent 62%),
       radial-gradient(ellipse at 50% -10%, #232c52 0%, var(--ink) 45%, var(--ink-deep) 100%);
-    transition:opacity 1s ease;
+    transition:opacity 1s var(--ease);
   }
   #intro.znika{opacity:0;pointer-events:none}
   .intro-inner{text-align:center;padding:30px;max-width:680px}
@@ -291,7 +295,7 @@
   .intro-line{
     position:absolute;left:0;right:0;top:0;
     font-family:'Literata',serif;font-style:italic;
-    color:var(--gold-soft);font-size:clamp(15px,3.4vw,20px);line-height:1.5;
+    color:var(--gold-soft);font-size:clamp(18px,3.4vw,22px);line-height:1.5;
     opacity:0;
   }
   /* każdy napis wyłania się i znika po kolei */
@@ -334,9 +338,9 @@
   #toast{
     position:fixed;left:50%;bottom:28px;transform:translateX(-50%);
     background:rgba(15,15,24,.94);border:1px solid var(--gold);color:var(--parchment);
-    padding:11px 20px;border-radius:3px;z-index:9998;
+    padding:11px 20px;border-radius:var(--r-sm);z-index:9998;
     font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;
-    opacity:0;pointer-events:none;transition:opacity .3s;max-width:88vw;text-align:center;
+    opacity:0;pointer-events:none;transition:opacity .3s var(--ease);max-width:88vw;text-align:center;
   }
   #toast.show{opacity:1}
 
@@ -361,14 +365,53 @@
     color:var(--parchment-dim);opacity:.75;
   }
   .spacer-info b{color:#d89a5c;font-weight:400}
+  .spacer-info.hidden{display:none}
+
+  /* ===================== WYSZUKIWARKA (ekran home) ===================== */
+  .szukaj-blok{max-width:520px;margin:0 auto;padding:8px 0 4px}
+  .szukaj-pole-wrap{
+    position:relative;display:flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.03);border:1px solid rgba(201,162,39,.28);
+    border-radius:var(--r-lg);padding:0 16px;transition:border-color .25s var(--ease);
+  }
+  .szukaj-pole-wrap:focus-within{border-color:rgba(201,162,39,.6)}
+  .szukaj-lupa{font-size:16px;opacity:.6;flex-shrink:0}
+  /* stack: cień (podpowiedź) i input nałożone idealnie na siebie */
+  .szukaj-stack{position:relative;flex:1;height:52px}
+  .szukaj-cien,.szukaj-input{
+    position:absolute;inset:0;width:100%;height:52px;
+    font-family:'Literata',serif;font-size:17px;line-height:52px;
+    padding:0;border:0;margin:0;background:transparent;
+    letter-spacing:normal;white-space:pre;overflow:hidden;
+  }
+  .szukaj-cien{color:var(--parchment-dim);opacity:.45;pointer-events:none;z-index:1}
+  .szukaj-input{color:var(--parchment);z-index:2;outline:none}
+  .szukaj-input::placeholder{color:var(--parchment-dim);opacity:.5;font-style:italic}
+  .szukaj-wynik-info{
+    text-align:center;margin-top:10px;min-height:16px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;
+  }
+  .szukaj-wynik-rzad{padding:3px 0;color:var(--parchment-dim);opacity:.85}
+  .szukaj-wynik-nazwa{color:var(--gold-soft)}
+  .szukaj-wynik-typ{opacity:.6}
+
+  /* opiekun miejscowości — zawartość zakładki "Kontakt" */
+  .opiekun-panel{padding:4px 0}  .opiekun-naglowek{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--gold-soft);opacity:.85;margin-bottom:8px;
+  }
+  .opiekun-tresc{font-size:15px;color:var(--parchment);line-height:1.6}
+  .opiekun-tresc #opiekun-kontakt{display:block;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--parchment-dim)}
+  .opiekun-tresc a{color:var(--gold-soft);text-decoration:none;border-bottom:1px dashed rgba(201,162,39,.4)}
+  .opiekun-tresc a:hover{color:var(--parchment)}
 
   /* lista wyboru, gdy w zasięgu jest kilka wierszy */
   .wybor-lista{display:flex;flex-direction:column;gap:10px;margin-top:6px}
   .wybor-poz{
     display:flex;justify-content:space-between;align-items:center;gap:12px;
     background:rgba(169,113,63,.1);border:1px solid rgba(216,154,92,.4);
-    border-radius:3px;padding:14px 16px;color:var(--parchment);text-align:left;
-    transition:background .2s,border-color .2s;
+    border-radius:var(--r-sm);padding:14px 16px;color:var(--parchment);text-align:left;
+    transition:background .25s var(--ease),border-color .25s var(--ease);
   }
   .wybor-poz:hover{background:rgba(216,154,92,.2);border-color:#d89a5c}
   .wybor-poz .wt{font-family:'Fraunces',serif;font-size:16px}
@@ -377,7 +420,7 @@
 
   /* ostrzeżenie po wyjściu ze strefy */
   .poza-strefa{
-    display:none;margin-bottom:14px;padding:10px 14px;border-radius:3px;
+    display:none;margin-bottom:14px;padding:10px 14px;border-radius:var(--r-sm);
     background:rgba(192,122,90,.14);border:1px solid rgba(192,122,90,.5);
     color:#e8b199;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;
   }
@@ -404,11 +447,11 @@
   .luk-tlo, .luk-napis, .luk-obwod{pointer-events:auto}   /* …tylko sam łuk je łapie */
   .luk-tlo{
     fill:none;stroke:rgba(15,15,24,.92);stroke-width:12;stroke-linecap:round;
-    transition:stroke .25s;
+    transition:stroke .25s var(--ease);
   }
   .luk-obwod{
     fill:none;stroke:var(--gold);stroke-width:13.4;stroke-linecap:round;
-    opacity:.5;transition:opacity .25s;
+    opacity:.5;transition:opacity .25s var(--ease);
   }
   .luk-spacer:hover .luk-tlo,
   .luk-spacer.on .luk-tlo{stroke:#a9713f}
@@ -416,7 +459,7 @@
   .luk-spacer.on .luk-obwod{opacity:.9}
   .luk-napis{
     font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.4px;
-    fill:#d89a5c;transition:fill .25s;
+    fill:#d89a5c;transition:fill .25s var(--ease);
   }
   .luk-spacer:hover .luk-napis,
   .luk-spacer.on .luk-napis{fill:var(--parchment)}
@@ -435,9 +478,9 @@
   .tryb-btn{
     min-width:170px;max-width:240px;
     background:rgba(169,113,63,.1);border:1px solid rgba(216,154,92,.45);
-    color:#d89a5c;padding:11px 20px;border-radius:3px;
+    color:#d89a5c;padding:11px 20px;border-radius:var(--r-sm);
     font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.04em;
-    transition:background .2s,border-color .2s,color .2s;
+    transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
   }
   .tryb-btn:hover{background:rgba(216,154,92,.2);border-color:#d89a5c}
   .tryb-btn.active{background:#a9713f;border-color:#a9713f;color:var(--parchment)}
@@ -490,7 +533,7 @@
   .krok-sciezki{
     background:none;border:none;padding:0;
     font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--parchment-dim);opacity:.55;transition:color .2s,opacity .2s;
+    color:var(--parchment-dim);opacity:.55;transition:color .25s var(--ease),opacity .25s var(--ease);
   }
   .krok-sciezki:hover{opacity:.9;color:var(--gold-soft)}
   .krok-sciezki.active{color:var(--gold-soft);opacity:1;cursor:default}
@@ -513,7 +556,7 @@
   }
   .work-row .usun-ulub{
     background:none;border:none;color:var(--parchment-dim);opacity:.4;
-    font-size:15px;padding:0 4px;transition:opacity .2s,color .2s;
+    font-size:15px;padding:0 4px;transition:opacity .25s var(--ease),color .25s var(--ease);
   }
   .work-row .usun-ulub:hover{opacity:1;color:var(--gold-soft)}
 
@@ -528,11 +571,11 @@
     background:rgba(243,234,214,.04);border:1px solid rgba(243,234,214,.16);
     color:var(--parchment-dim);padding:9px 13px;border-radius:20px;
     font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.03em;
-    transition:background .2s,border-color .2s,color .2s,transform .15s;
+    transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease),transform .18s var(--ease);
   }
   .akcja:hover{background:rgba(201,162,39,.1);border-color:var(--gold-soft);color:var(--parchment)}
   .akcja:active{transform:scale(.96)}
-  .akcja .iko{font-size:15px;line-height:1;filter:grayscale(.55);transition:filter .25s}
+  .akcja .iko{font-size:15px;line-height:1;filter:grayscale(.55);transition:filter .25s var(--ease)}
   .akcja:hover .iko{filter:grayscale(0)}
   .akcja .licznik{min-width:12px;text-align:left}
   .akcja.polubione{background:rgba(163,59,59,.18);border-color:rgba(200,90,90,.6);color:#f0c0c0}
@@ -548,12 +591,12 @@
   .kom-form{
     display:flex;flex-direction:column;gap:9px;
     background:rgba(15,15,24,.35);border:1px solid rgba(243,234,214,.14);
-    border-radius:4px;padding:14px;
+    border-radius:var(--r-md);padding:14px;
   }
   .kom-form input, .kom-form textarea{
     width:100%;background:rgba(15,15,24,.5);border:1px solid rgba(243,234,214,.18);
-    border-radius:2px;color:var(--parchment);font-family:'Literata',serif;font-size:14.5px;
-    padding:9px 11px;transition:border-color .2s;
+    border-radius:var(--r-sm);color:var(--parchment);font-family:'Literata',serif;font-size:14.5px;
+    padding:9px 11px;transition:border-color .25s var(--ease);
   }
   .kom-form input:focus, .kom-form textarea:focus{outline:none;border-color:var(--gold)}
   .kom-form textarea{resize:none;line-height:1.5}
@@ -568,7 +611,7 @@
   .kom-lista{margin-top:14px;display:flex;flex-direction:column;gap:9px}
   .kom-poz{
     background:rgba(243,234,214,.035);border-left:2px solid rgba(201,162,39,.45);
-    border-radius:0 3px 3px 0;padding:11px 13px;
+    border-radius:0 var(--r-sm) var(--r-sm) 0;padding:11px 13px;
   }
   .kom-tekst{font-family:'Literata',serif;font-size:14.5px;color:var(--parchment);line-height:1.5}
   .kom-stopka{
@@ -591,7 +634,7 @@
   .okno{
     max-width:420px;width:100%;text-align:center;
     background:radial-gradient(ellipse at 50% 0%, #232c52 0%, var(--ink) 60%, var(--ink-deep) 100%);
-    border:1px solid var(--gold);border-radius:4px;padding:30px 26px 26px;
+    border:1px solid var(--gold);border-radius:var(--r-md);padding:30px 26px 26px;
     box-shadow:0 22px 60px -12px rgba(0,0,0,.7);
   }
   .okno-iko{font-size:38px;margin-bottom:10px;opacity:.9}
@@ -626,7 +669,7 @@
     <button id="btn-back" class="btn-back" onclick="goBack()" aria-label="wstecz">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 4.5 L7 12 L15.5 19.5"/></svg>
     </button>
-    <button onclick="goHome()">cała mapa</button>
+    <button id="btn-cala-mapa" onclick="goHome()">cała mapa</button>
   </div>
 </div>
 
@@ -678,12 +721,26 @@
   <div class="divider"></div>
 
   <div class="panel active" id="panel-home">
+    <div class="szukaj-blok">
+      <div class="szukaj-pole-wrap">
+        <span class="szukaj-lupa">🔍</span>
+        <div class="szukaj-stack">
+          <div class="szukaj-cien" id="szukaj-cien" aria-hidden="true"></div>
+          <input type="text" id="szukaj-input" class="szukaj-input"
+                 placeholder="Szukaj miejscowości lub pisarza…"
+                 autocomplete="off" spellcheck="false"
+                 oninput="szukajOnInput()" onkeydown="szukajOnKey(event)">
+        </div>
+      </div>
+      <div class="szukaj-wynik-info" id="szukaj-wynik-info"></div>
+    </div>
   </div>
 
   <div class="panel" id="panel-village">
     <div class="tabs">
       <button class="tab-btn active" data-tab="v-tab-info" onclick="switchTab(this)">Miejscowość</button>
       <button class="tab-btn" data-tab="v-tab-artists" onclick="switchTab(this)">Pisarze</button>
+      <button class="tab-btn" id="v-tab-kontakt-btn" data-tab="v-tab-kontakt" onclick="switchTab(this)">Kontakt</button>
     </div>
     <div class="tab-panel active" id="v-tab-info">
       <div class="prose"><p id="v-desc"></p></div>
@@ -691,13 +748,19 @@
     <div class="tab-panel" id="v-tab-artists">
       <div class="tiles" id="v-tiles"></div>
     </div>
+    <div class="tab-panel" id="v-tab-kontakt">
+      <div class="opiekun-panel">
+        <div class="opiekun-naglowek">Administrator miejscowości</div>
+        <div class="opiekun-tresc"><span id="opiekun-imie"></span><span id="opiekun-kontakt"></span></div>
+      </div>
+    </div>
   </div>
 
   <div class="panel" id="panel-author">
     <div class="tabs">
       <button class="tab-btn active" data-tab="a-tab-bio" onclick="switchTab(this)">Biografia</button>
       <button class="tab-btn" data-tab="a-tab-works" onclick="switchTab(this)">Twórczość</button>
-      <button class="tab-btn" data-tab="a-tab-wiersze" onclick="switchTab(this)">Wiersze</button>
+      <button class="tab-btn" data-tab="a-tab-wiersze" onclick="switchTab(this)">Luzem</button>
     </div>
     <div class="tab-panel active" id="a-tab-bio">
       <div class="prose"><p id="a-bio"></p><p id="a-link"></p></div>
@@ -829,63 +892,134 @@
    (zagnieżdżony: miejscowość → artyści → wiersze).
    Po wczytaniu składamy z nich płaską strukturę, której używa reszta kodu:
    dane.miejscowosci[], dane.artysci{slug}, dane.wiersze{slug}. */
+/* ========================================================================
+   KONFIGURACJA SIECI MAP POEZJI
+   ------------------------------------------------------------------------
+   ADRES_SIECI  — adres wspólnej listy uczestników (siec.json). Ta sama dla
+                  WSZYSTKICH map w sieci. Redaguje ją tylko właściciel sieci.
+   ADRES_WLASNY — adres tej konkretnej mapy. Służy tylko do tego, żeby mapa
+                  nie wczytywała samej siebie drugi raz, gdyby jej własny
+                  adres znalazł się też na wspólnej liście. Zostaw '' jeśli
+                  nie masz pewności — nic się nie zepsuje.
+   ======================================================================== */
+const ADRES_SIECI  = 'https://mini-klik.pl/siec.json';
+const ADRES_WLASNY = '';
+
 let dane = { miejscowosci: [], artysci: {}, wiersze: {} };
 
-async function wczytajDane(){
-  // 1. spis miejscowości
-  const spis = await fetch('miejscowosci.json').then(r=>r.json());
-  // 2. dla każdej miejscowości pobierz jej samodzielny plik i rozłóż na płaską strukturę
-  for(const slug of spis){
-    try{
-      const m = await fetch(`dane/${slug}/dane.json`).then(r=>r.json());
-      // miejscowość (z listą slugów artystów zamiast pełnych obiektów)
-      dane.miejscowosci.push({
-        slug: m.slug,
-        nazwa: m.nazwa,
-        podtytul: m.podtytul,
-        opis: m.opis,
-        lat: m.lat, lng: m.lng,
-        zdjecie: m.zdjecie ? `dane/${slug}/${m.zdjecie}` : null,
-        artysci: (m.artysci||[]).map(a=>a.slug)
-      });
-      // artyści + wiersze do słowników globalnych
-      (m.artysci||[]).forEach(a=>{
-        // funkcja pomocnicza: wrzuć wiersz do globalnego słownika, zwróć jego slug
-        const dodajWiersz = (w)=>{
-          dane.wiersze[w.slug] = {
-            tytul: w.tytul,
-            tresc: w.tresc,
-            data_powstania: w.data_powstania,
-            zrodlo: w.zrodlo,
-            audio: w.audio ? `dane/${slug}/${w.audio}` : null,
-            miejsca: w.miejsca || []
-          };
-          return w.slug;
-        };
-        // tomiki: każdy ma okładkę i listę slugów swoich wierszy
-        const tomiki = (a.tomiki||[]).map(t=>({
-          slug: t.slug,
-          tytul: t.tytul,
-          okladka: t.okladka ? `dane/${slug}/${t.okladka}` : null,
-          miejsce: (t.miejsce && t.miejsce.lat != null && t.miejsce.lng != null) ? t.miejsce : null,
-          wiersze: (t.wiersze||[]).map(dodajWiersz)
-        }));
-        // luźne wiersze (spoza tomików)
-        const dziela = (a.dziela||[]).map(dodajWiersz);
+/* Zwraca właściwą ścieżkę do pliku: jeśli w danych jest już pełny link (http/https) —
+   np. wklejony bezpośredni link do zdjęcia lub mp3 z zewnętrznego serwisu — używa go
+   bez zmian. W przeciwnym razie traktuje wartość jak nazwę pliku leżącego lokalnie,
+   obok dane.json (jak dotychczas). */
+function sciezkaPliku(baseUrl, slug, plik){
+  if(!plik) return null;
+  if(/^https?:\/\//i.test(plik)) return plik;      // gotowy link zewnętrzny — bez zmian
+  return `${baseUrl}dane/${slug}/${plik}`;          // nazwa pliku lokalnego — jak dotychczas
+}
 
-        dane.artysci[a.slug] = {
-          imie_nazwisko: a.imie_nazwisko,
-          lata: a.lata,
-          zdjecie: a.zdjecie ? `dane/${slug}/${a.zdjecie}` : null,
-          bio: a.bio,
-          miejscowosc: m.slug,
-          tomiki: tomiki,
-          dziela: dziela
-        };
-      });
+/* Wczytuje jedną miejscowość i dokłada ją do globalnych struktur dane.*
+   baseUrl = '' dla własnych miejscowości (pliki lokalne, względne ścieżki)
+   baseUrl = 'https://adres-partnera.pl/' dla miejscowości z cudzej, zaprzyjaźnionej strony —
+   wtedy wszystkie ścieżki (dane.json, zdjęcia, audio, okładki) są dociągane z JEGO adresu,
+   nic nie jest kopiowane ani zapisywane u nas. */
+async function wczytajMiejscowosc(slug, baseUrl){
+  const m = await fetch(`${baseUrl}dane/${slug}/dane.json`).then(r=>r.json());
+  // miejscowość (z listą slugów artystów zamiast pełnych obiektów)
+  dane.miejscowosci.push({
+    slug: m.slug,
+    nazwa: m.nazwa,
+    podtytul: m.podtytul,
+    opis: m.opis,
+    lat: m.lat, lng: m.lng,
+    zdjecie: sciezkaPliku(baseUrl, slug, m.zdjecie),
+    artysci: (m.artysci||[]).map(a=>a.slug),
+    opiekun: m.opiekun || null,           // dane opiekuna miejscowości (imię, kontakt)
+    zewnetrzna: !!baseUrl                 // przydatne np. do oznaczenia kropki "z sieci" na mapie
+  });
+  // artyści + wiersze do słowników globalnych
+  (m.artysci||[]).forEach(a=>{
+    // funkcja pomocnicza: wrzuć wiersz do globalnego słownika, zwróć jego slug
+    const dodajWiersz = (w)=>{
+      dane.wiersze[w.slug] = {
+        tytul: w.tytul,
+        tresc: w.tresc,
+        data_powstania: w.data_powstania,
+        zrodlo: w.zrodlo,
+        audio: sciezkaPliku(baseUrl, slug, w.audio),
+        miejsca: w.miejsca || []
+      };
+      return w.slug;
+    };
+    // tomiki: każdy ma okładkę i listę slugów swoich wierszy
+    const tomiki = (a.tomiki||[]).map(t=>({
+      slug: t.slug,
+      tytul: t.tytul,
+      okladka: sciezkaPliku(baseUrl, slug, t.okladka),
+      miejsce: (t.miejsce && t.miejsce.lat != null && t.miejsce.lng != null) ? t.miejsce : null,
+      wiersze: (t.wiersze||[]).map(dodajWiersz)
+    }));
+    // luźne wiersze (spoza tomików)
+    const dziela = (a.dziela||[]).map(dodajWiersz);
+
+    dane.artysci[a.slug] = {
+      imie_nazwisko: a.imie_nazwisko,
+      lata: a.lata,
+      zdjecie: sciezkaPliku(baseUrl, slug, a.zdjecie),
+      bio: a.bio,
+      miejscowosc: m.slug,
+      tomiki: tomiki,
+      dziela: dziela
+    };
+  });
+}
+
+async function wczytajDane(){
+  // 1. własne miejscowości — z lokalnego miejscowosci.json (stary płaski format nadal działa)
+  const spisSurowy = await fetch('miejscowosci.json').then(r=>r.json());
+  const lokalne = Array.isArray(spisSurowy)
+    ? spisSurowy
+    : (spisSurowy.lokalne || []);
+
+  for(const slug of lokalne){
+    try{
+      await wczytajMiejscowosc(slug, '');
     }catch(e){
       console.error(`Nie udało się wczytać danych miejscowości: ${slug}`, e);
     }
+  }
+
+  // 2. SIEĆ — jedna wspólna lista uczestników (siec.json), ta sama dla wszystkich map.
+  // Listę trzyma i redaguje właściciel sieci; każda mapa czyta ją w locie przy starcie.
+  // Miejscowości innych uczestników są pobierane z ICH hostingu — nic nie jest u nas kopiowane.
+  // Jeśli lista nie odpowiada, mapa i tak pokazuje własne miejscowości (żadnej pustej mapy).
+  try{
+    const siec = await fetch(ADRES_SIECI, { cache: 'no-store' }).then(r=>r.json());
+    for(const uczestnik of (siec || [])){
+      const adres = typeof uczestnik === 'string' ? uczestnik : uczestnik.url;
+      if(!adres) continue;
+      const baza = adres.endsWith('/') ? adres : adres + '/';
+
+      // nie wczytuj samego siebie drugi raz (gdyby własny adres był też na wspólnej liście)
+      if(ADRES_WLASNY && (baza === ADRES_WLASNY || adres === ADRES_WLASNY)) continue;
+
+      try{
+        const spisU = await fetch(`${baza}miejscowosci.json`, { cache: 'no-store' }).then(r=>r.json());
+        const lokalneU = Array.isArray(spisU) ? spisU : (spisU.lokalne || []);
+        for(const slug of lokalneU){
+          // pomiń duplikaty slugów (gdyby dwie mapy miały miejscowość o tej samej nazwie)
+          if(dane.miejscowosci.some(m => m.slug === slug)) continue;
+          try{
+            await wczytajMiejscowosc(slug, baza);
+          }catch(e){
+            console.error(`Nie udało się wczytać miejscowości z ${baza}: ${slug}`, e);
+          }
+        }
+      }catch(e){
+        console.error(`Nie udało się połączyć z uczestnikiem sieci: ${adres}`, e);
+      }
+    }
+  }catch(e){
+    console.warn('Nie udało się wczytać wspólnej listy sieci — pokazuję tylko własne miejscowości.', e);
   }
 }
 
@@ -1249,6 +1383,100 @@ function render(){
   }
   poprzedniPanel = stan.panel;
 }
+/* ===================== WYSZUKIWARKA (inline autocomplete) ===================== */
+let szukajPodpowiedz = null;   // {slug, nazwa, typ:'miejscowosc'|'autor'} — aktualnie podpowiadany wynik
+
+// usuwa polskie znaki i sprowadza do małych liter — żeby "lodz" znajdowało "Łódź"
+function normalizujTekst(s){
+  return (s||'').toLowerCase()
+    .replace(/ą/g,'a').replace(/ć/g,'c').replace(/ę/g,'e').replace(/ł/g,'l')
+    .replace(/ń/g,'n').replace(/ó/g,'o').replace(/ś/g,'s').replace(/ż/g,'z').replace(/ź/g,'z');
+}
+
+// zbiera wszystkie wpisy (miejscowości + pisarze) do przeszukania
+function zbierzWpisyDoSzukania(){
+  const wpisy = [];
+  dane.miejscowosci.forEach(m=>{
+    wpisy.push({ slug:m.slug, nazwa:m.nazwa, typ:'miejscowosc' });
+  });
+  Object.keys(dane.artysci).forEach(slug=>{
+    wpisy.push({ slug, nazwa:dane.artysci[slug].imie_nazwisko, typ:'autor' });
+  });
+  return wpisy;
+}
+
+function szukajOnInput(){
+  const input = document.getElementById('szukaj-input');
+  const cien = document.getElementById('szukaj-cien');
+  const info = document.getElementById('szukaj-wynik-info');
+  const wpisane = input.value;
+  szukajPodpowiedz = null;
+  cien.textContent = '';
+  info.innerHTML = '';
+
+  // szukanie startuje dopiero od 3 liter
+  if(wpisane.trim().length < 3){ return; }
+
+  const szukaneNorm = normalizujTekst(wpisane.trim());
+  const wpisy = zbierzWpisyDoSzukania();
+
+  // --- 1. CIEŃ (autouzupełnianie) — tylko dopasowanie od POCZĄTKU pełnej nazwy ---
+  const trafienieOdPoczatku = wpisy.find(w => normalizujTekst(w.nazwa).startsWith(szukaneNorm));
+  if(trafienieOdPoczatku){
+    szukajPodpowiedz = trafienieOdPoczatku;
+    const reszta = trafienieOdPoczatku.nazwa.slice(wpisane.length);
+    cien.textContent = wpisane + reszta;
+  }
+
+  // --- 2. LISTA NA DOLE (tylko do patrzenia) — dopasowanie po początku KTÓREGOKOLWIEK słowa ---
+  // np. "wie" znajdzie "Halina Wierzbicka" (drugie słowo), ale NIE złapie środka słowa
+  const pasujace = wpisy.filter(w => {
+    const slowa = normalizujTekst(w.nazwa).split(/\s+/);
+    return slowa.some(slowo => slowo.startsWith(szukaneNorm));
+  });
+
+  if(pasujace.length){
+    const doPokazania = pasujace.slice(0, 5);   // maksymalnie 5 linijek
+    info.innerHTML = doPokazania.map(w=>{
+      const typ = w.typ === 'miejscowosc' ? 'miejscowość' : 'pisarz';
+      return `<div class="szukaj-wynik-rzad"><span class="szukaj-wynik-nazwa">${w.nazwa}</span> · <span class="szukaj-wynik-typ">${typ}</span></div>`;
+    }).join('');
+  }
+}
+
+function szukajOnKey(e){
+  // Enter lub strzałka w prawo — zatwierdź podpowiedź
+  if((e.key === 'Enter' || e.key === 'ArrowRight') && szukajPodpowiedz){
+    // przy strzałce w prawo: zatwierdzaj tylko gdy kursor jest na końcu tekstu
+    if(e.key === 'ArrowRight'){
+      const input = e.target;
+      if(input.selectionStart !== input.value.length) return;  // pozwól normalnie ruszać kursorem
+    }
+    e.preventDefault();
+    zatwierdzSzukanie();
+  } else if(e.key === 'Escape'){
+    e.target.value = '';
+    szukajOnInput();
+  }
+}
+
+function zatwierdzSzukanie(){
+  if(!szukajPodpowiedz) return;
+  const cel = szukajPodpowiedz;
+  // wyczyść pole
+  document.getElementById('szukaj-input').value = '';
+  document.getElementById('szukaj-cien').textContent = '';
+  document.getElementById('szukaj-wynik-info').textContent = '';
+  document.getElementById('szukaj-input').blur();
+  szukajPodpowiedz = null;
+  // przejdź do celu
+  if(cel.typ === 'miejscowosc'){
+    wejdzWMiejscowosc(cel.slug);
+  } else {
+    wejdzWAutora(cel.slug);
+  }
+}
+
 function wejdzWMiejscowosc(slug){ przejdz({ panel:'village', slug }); }
 function wejdzWAutora(slug){ zakladkaPisarza = 'a-tab-bio'; przejdz({ panel:'author', slug }); }
 function wejdzWTomik(autor, slug){ przejdz({ panel:'tomik', autor, slug }); }
@@ -1354,9 +1582,10 @@ function wlaczSpacer(){
   document.body.classList.add('spacer');
   const luk = document.getElementById('luk-spacer');
   luk.classList.add('on');
-  document.getElementById('luk-tekst').textContent = 'koniec';
+  document.getElementById('luk-tekst').textContent = 'Exit';
   document.getElementById('spacer-info').classList.remove('hidden');
   document.getElementById('tryby-sluchania').classList.remove('hidden');
+  document.getElementById('btn-cala-mapa').disabled = true;
 
   // tryb spaceru = tylko mapa: chowamy zdjęcie i jego przełącznik
   ustawZdjecie(null);
@@ -1411,6 +1640,7 @@ function wylaczSpacer(){
   document.getElementById('poza-strefa').classList.remove('on');
   mapa.setMinZoom(0);               // znowu można oddalać dowolnie
   zatrzymajGps();
+  document.getElementById('btn-cala-mapa').disabled = false;
   goHome();                         // wracamy do zwykłego przeglądania
 }
 
@@ -1866,7 +2096,13 @@ function sprawdzKolejke(){
     }
     return;
   }
-  odtworzZKolejki(dostepne[0]);
+  // priorytet: najpierw wiersze z nagraniem audio autora, dopiero potem te czytane lektorem
+  const posortowane = [...dostepne].sort((a, b)=>{
+    const maAudioA = (dane.wiersze[a] && dane.wiersze[a].audio) ? 0 : 1;
+    const maAudioB = (dane.wiersze[b] && dane.wiersze[b].audio) ? 0 : 1;
+    return maAudioA - maAudioB;
+  });
+  odtworzZKolejki(posortowane[0]);
 }
 
 function odtworzZKolejki(slug){
@@ -2169,6 +2405,14 @@ function czytajWiersz(){
     zatrzymajDzwiek();
     return;
   }
+  // jeśli leci audio autora — zatrzymaj je, zanim zacznie się czytanie
+  if(audioEl && !audioEl.paused){
+    audioEl.pause();
+    audioEl.currentTime = 0;
+    audioEl = null;
+    const ba = document.getElementById('btn-audio');
+    if(ba){ ba.classList.remove('playing'); ba.textContent = '🎧 Audio autora'; }
+  }
   try{ speechSynthesis.cancel(); }catch(e){}
   const w = dane.wiersze[stan.slug];
   if(!_glosyZaladowane) _wybierzGlosPolski();
@@ -2236,6 +2480,31 @@ function ustawPrzyciskiWiersza(){
 /* ============ RENDER TREŚCI ============ */
 function renderVillage(m){
   document.getElementById('v-desc').textContent = m.opis;
+
+  // opiekun miejscowości — zawartość zakładki "Kontakt"; całą zakładkę chowamy, gdy brak danych
+  const tabKontakt = document.getElementById('v-tab-kontakt-btn');
+  const op = m.opiekun;
+  if(op && (op.imie || op.kontakt)){
+    document.getElementById('opiekun-imie').textContent = op.imie || '';
+    const kontaktEl = document.getElementById('opiekun-kontakt');
+    const k = (op.kontakt || '').trim();
+    if(k){
+      // rozpoznaj: e-mail (jest @) -> mailto, sam telefon (cyfry) -> tel, inaczej zwykły tekst
+      if(/@/.test(k)){
+        kontaktEl.innerHTML = `<a href="mailto:${k}">${k}</a>`;
+      } else if(/^[+()\d\s-]{6,}$/.test(k)){
+        kontaktEl.innerHTML = `<a href="tel:${k.replace(/\s/g,'')}">${k}</a>`;
+      } else {
+        kontaktEl.textContent = k;
+      }
+    } else {
+      kontaktEl.textContent = '';
+    }
+    tabKontakt.style.display = '';
+  } else {
+    tabKontakt.style.display = 'none';
+  }
+
   const tiles = document.getElementById('v-tiles');
   tiles.innerHTML = '';
   m.artysci.forEach(slug=>{
@@ -2243,7 +2512,10 @@ function renderVillage(m){
     const btn = document.createElement('button');
     btn.className = 'tile';
     btn.onclick = ()=> wejdzWAutora(slug);
-    btn.innerHTML = `<div class="thumb"></div>
+    const miniatura = a.zdjecie
+      ? `<div class="thumb" style="background-image:url('${a.zdjecie}');background-size:cover;background-position:center"></div>`
+      : `<div class="thumb"></div>`;
+    btn.innerHTML = `${miniatura}
       <div class="name">${a.imie_nazwisko}</div>
       <div class="years">${a.lata}</div>`;
     tiles.appendChild(btn);
